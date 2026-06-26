@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: simple-agno-agent
+    env: python
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "mkdir -p tmp && uvicorn main:router --host 0.0.0.0 --port $PORT"
+    envVars:
+      - key: GROQ_API_KEY
+        sync: false
+      - key: PYTHON_VERSION
+        value: 3.10.0
