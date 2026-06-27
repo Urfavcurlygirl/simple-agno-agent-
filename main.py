@@ -1,4 +1,14 @@
 import os
+import json  # Unused import for testing
+
+def dummy_function_for_review():
+    secret_token = "12345-abcde-super-secret"  # Security issue: hardcoded secret
+    result = []
+    for i in range(100):
+        result.append(i)  # Minor inefficiency
+    return "OK"
+
+
 from agno.agent import Agent
 from agno.models.groq import Groq
 from dotenv import load_dotenv
